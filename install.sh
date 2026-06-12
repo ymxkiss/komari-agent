@@ -105,7 +105,7 @@ done
 # Remove leading space from komari_args if present
 komari_args="${komari_args# }"
 
-komari_agent_path="${target_dir}/agent"
+komari_agent_path="${target_dir}/${service_name}" 
 
 # macOS doesn't always require sudo for everything
 if [ "$os_name" = "darwin" ] && command -v brew >/dev/null 2>&1; then
