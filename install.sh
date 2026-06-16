@@ -472,7 +472,7 @@ elif [ "$init_system" = "systemd" ]; then
     service_file="/etc/systemd/system/${service_name}.service"
     cat > "$service_file" << EOF
 [Unit]
-Description="${service_name}"
+Description=${service_name}
 After=network.target
 
 [Service]
