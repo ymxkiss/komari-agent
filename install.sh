@@ -446,7 +446,7 @@ elif [ "$init_system" = "openrc" ]; then
 #!/sbin/openrc-run
 
 name="Komari Agent Service"
-description="${service_name}"
+description=${service_name}
 command="${komari_agent_path}"
 command_args="${komari_args}"
 command_user="root"
