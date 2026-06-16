@@ -446,7 +446,7 @@ elif [ "$init_system" = "openrc" ]; then
 #!/sbin/openrc-run
 
 name="Komari Agent Service"
-description="Komari monitoring agent"
+description="${service_name}"
 command="${komari_agent_path}"
 command_args="${komari_args}"
 command_user="root"
@@ -472,7 +472,7 @@ elif [ "$init_system" = "systemd" ]; then
     service_file="/etc/systemd/system/${service_name}.service"
     cat > "$service_file" << EOF
 [Unit]
-Description=Komari Agent Service
+Description="${service_name}"
 After=network.target
 
 [Service]
