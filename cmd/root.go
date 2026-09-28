@@ -56,7 +56,7 @@ var RootCmd = &cobra.Command{
 		stopCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 		defer stop()
 
-		stopWarning := startSecurityWarning(stopCtx)
+		stopWarning := func() {}
 		defer stopWarning()
 		shutdown := newShutdownCoordinator(stopWarning, netstatic.Stop, os.Exit)
 		go func() {
